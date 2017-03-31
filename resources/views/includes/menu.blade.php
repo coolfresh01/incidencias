@@ -7,7 +7,16 @@
 				<li><a href="">Dashboard</a></li>
 				<li><a href="">Ver Incidencias</a></li>
 				<li><a href="">Reportar Incidencia</a></li>
-				<li><a href="">Administracion</a></li>
+				<li role="presentation" class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      Administracion <span class="caret"></span>
+				    </a>
+				    <ul class="dropdown-menu">
+				      <li><a href="/usuarios">Usuarios</a></li>
+				      <li><a href="/proyectos">Proyectos</a></li>
+				      <li><a href="/config">Configuracion</a></li>
+				    </ul>
+				 </li>
 			@else
 				<li><a href="">Bienvenido</a></li>
 				<li><a href="">Instrucciones</a></li>
