@@ -34,10 +34,20 @@ class HomeController extends Controller
         return view('report')->with(compact('categories'));
     }
 
-    public function postReport(Request $request) 
+    public function postReport(Request $request)
     {
+        $rules = [
+            'category_id' =>  'sometimes|exists:categories,id',
+            'severity'    =>  'required|in:M,N,A',
+            'title'       =>  'required|min:5',
+            'description' =>  'required|min:15'
+        ];
+
+        $this->validate($request, $rules);
+        //$this->validate($request, $rules [, $messages, $customAttributes]);
+
         $incident = new Incident();
-        
+
         $incident->category_id  = $request->input('category_id') ?: null;
         $incident->severity     = $request->input('severity');
         $incident->title        = $request->input('title');
