@@ -43,7 +43,15 @@ class HomeController extends Controller
             'description' =>  'required|min:15'
         ];
 
-        $this->validate($request, $rules);
+        $messages = [
+            'category_id.exists'    => 'La categoria seleccionada no existe en la BD',
+            'title.required'        => 'Es necesario ingresar un titulo para la inciencia.',
+            'title.min'             => 'El titulo debe ser de al menos 5 caracteres.',
+            'description.required'  => 'Es necesario ingresar una descripcion para la incidencia.',
+            'description.min'       => 'La descripcion debe presentar al menos 15 caracteres.'
+        ];
+
+        $this->validate($request, $rules, $messages);
         //$this->validate($request, $rules [, $messages, $customAttributes]);
 
         $incident = new Incident();

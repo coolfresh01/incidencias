@@ -43,7 +43,13 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <form class="navbar-form">
+                            <div class="form-group">
+                                <select name="" class="form-control">
+                                    <option value="">Proyecto A</option>
+                                </select>
+                            </div>
+                        </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
